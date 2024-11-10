@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block title %}Patient List{% endblock %}
+<!--  -->
+{% block body %}
+<div class="h-75">
+  <h1 class="text-center mb-4">Book Appointment for {{ patient.name }}</h1>
+  <div class="container">
+    <form method="post" class="p-4 border rounded shadow">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="appointment_date" class="form-label"
+          >Appointment Date:</label
+        >
+        <input
+          type="datetime-local"
+          id="appointment_date"
+          name="appointment_date"
+          class="form-control"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Book Appointment</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

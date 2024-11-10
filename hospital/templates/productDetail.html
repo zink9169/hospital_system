@@ -1,0 +1,28 @@
+<!-- Product Detail -->
+
+{% extends 'base.html' %} {% block title %}Product Detail{% endblock %}
+<!--  -->
+{% block body %}
+<!-- For Product List  -->
+<div class="list-group h-75">
+  <button
+    type="button"
+    class="list-group-item list-group-item-action active"
+    aria-current="true"
+  >
+    Product Detail
+  </button>
+  <button type="button" class="list-group-item list-group-item-action">
+    Product Name: {{ products.name}}
+  </button>
+  <button type="button" class="list-group-item list-group-item-action">
+    Product Price: {{ products.price }}
+  </button>
+  <button type="button" class="list-group-item list-group-item-action">
+    Product Description: {{ products.description }}
+  </button>
+  <button type="button" class="list-group-item list-group-item-action">
+    Product Category: {{ products.category }}
+  </button>
+</div>
+{% endblock %}

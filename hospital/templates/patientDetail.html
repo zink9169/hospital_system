@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block title %}Patient List{% endblock %}
+<!--  -->
+{% block body %}
+<!-- For Patient List  -->
+{% for patient in patients %}
+
+<ul class="list-group">
+  <li class="list-group-item active" aria-current="true">Patient Details</li>
+  <li class="list-group-item">{{ patient.name }}</li>
+  <li class="list-group-item">{{ patient.age }}</li>
+  <li class="list-group-item">{{ patient.address }}</li>
+</ul>
+{% empty %}
+<li>No Patients Details</li>
+{% endfor %}
+<!--  -->
+{% endblock %}

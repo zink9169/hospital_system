@@ -1,0 +1,99 @@
+{% extends 'base.html' %} {% block title %} {% endblock%} {% block body %}
+<!-- Header -->
+<header class="bg-dark py-5">
+  <div class="container px-5">
+    <div class="row gx-5 align-items-center justify-content-center">
+      <div class="col-lg-8 col-xl-7 col-xxl-6">
+        <div class="my-5 text-center text-xl-start">
+          <h1 class="display-5 fw-bolder text-white mb-2">
+            Welcome from Asia Royal Hospital
+          </h1>
+          <p class="lead fw-normal text-white-50 mb-4">
+            Asia Royal Hospital is an 11th Storey twin building which was opened
+            on the 18th March 2000. We are providing multidisciplinary medical
+            care service with modern medical equipment.
+          </p>
+          <div
+            class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start"
+          >
+            <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'view_appointments' %}"
+              >Views booking</a
+            >
+            <a class="btn btn-outline-light btn-lg px-4" href="{% url 'aboutus' %}">About Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+        <img
+          class="img-fluid rounded-3 my-5"
+          src="https://www.asiaroyalhospital.com/wp-content/uploads/2022/04/ARH-Building-New-1-800x618.jpg"
+          alt="..."
+        />
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Features section-->
+<section class="py-5" id="features">
+  <div class="container px-5 my-5">
+    <div class="row gx-5">
+      <div class="col-lg-4 mb-5 mb-lg-0">
+        <h2 class="fw-bolder mb-0">A better way to get healthcare.</h2>
+      </div>
+      <div class="col-lg-8">
+        <div class="row gx-5 row-cols-1 row-cols-md-2">
+          <div class="col mb-5 h-100">
+            <div
+              class="feature bg-primary bg-gradient text-white rounded-3 mb-3 p-2"
+            >
+              <i class="bi bi-hospital"></i>
+            </div>
+            <h2 class="h5">State-of-the-Art Facilities</h2>
+            <p class="mb-0">
+              Equipped with the latest technology, our facilities guarantee
+              top-notch medical services.
+            </p>
+          </div>
+          <div class="col mb-5 h-100">
+            <div
+              class="feature bg-primary bg-gradient text-white rounded-3 mb-3 p-2"
+            >
+              <i class="bi bi-person-lines-fill"></i>
+            </div>
+            <h2 class="h5">Expert Healthcare Professionals</h2>
+            <p class="mb-0">
+              Our staff includes experienced doctors and specialists committed
+              to your health.
+            </p>
+          </div>
+          <div class="col mb-5 mb-md-0 h-100">
+            <div
+              class="feature bg-primary bg-gradient text-white rounded-3 mb-3 p-2"
+            >
+            <i class="bi bi-heart"></i>
+            </div>
+            <h2 class="h5">Patient Care</h2>
+            <p class="mb-0">
+              Our dedicated team ensures compassionate and personalized care for every patient.
+            </p>
+            </p>
+          </div>
+          <div class="col h-100">
+            <div
+              class="feature bg-primary bg-gradient text-white rounded-3 mb-3 p-2"
+            >
+            <i class="bi bi-calendar-check"></i>
+            </div>
+            <h2 class="h5">Efficient Appointment Scheduling</h2>
+            <p class="mb-0">
+              Easily book your appointments through our user-friendly system to
+              ensure timely care.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

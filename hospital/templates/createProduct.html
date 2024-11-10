@@ -1,0 +1,66 @@
+<!-- Product Detail -->
+
+{% extends 'base.html' %} {% block title %}Product Detail{% endblock %}
+<!--  -->
+{% block body %}
+
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-4" style="width: 400px">
+    <div class="card-body">
+      <!-- Creating Product  -->
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+          <label for="productName">Product Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            id="productName"
+            required
+            placeholder="Product Name Please"
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="productPrice">Price</label>
+          <input
+            type="number"
+            class="form-control"
+            name="price"
+            id="productPrice"
+            required
+            placeholder="Product Price Please"
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="productDescription">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="productDescription"
+            required
+            placeholder="Description Please"
+          />
+        </div>
+
+        <div class="form-group mb-3">
+          <label for="productCategory">Type of Category</label>
+          <input
+            type="text"
+            class="form-control"
+            name="category"
+            id="productCategory"
+            required
+            placeholder="Enter Category"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Create</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

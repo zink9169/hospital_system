@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'homepage' %}">Asia Taw Win</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'product_list' %}">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'doctor_list' %}">Doctors </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'worker_list' %}">Staff </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'view_appointments' %}"
+            >Appointments</a
+          >
+        </li>
+
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            More
+          </a>
+
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="{% url 'patient_list' %}"
+                >Patient</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'create_patient' %}"
+                >Create Patient</a
+              >
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+              <a class="dropdown-item" href="{% url 'shortest_path' %}">Path</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'aboutus' %}">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

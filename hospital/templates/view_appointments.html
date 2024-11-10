@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block title %}Upcoming Appointments{% endblock %}
+{% block body %}
+<div class="{% if products|length < 10 %}h-75{% endif %}">
+  <div class="container mt-2 mb-2">
+    <h1 class="text-center mb-4">Upcoming Appointments</h1>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Patient Name</th>
+            <th scope="col">Appointment Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for appointment in appointments %}
+          <tr>
+            <td>{{ appointment.patient.name }}</td>
+            <td>{{ appointment.appointment_date }}</td>
+            <td>
+              <form
+                action="{% url 'appointment_delete' appointment.id %}"
+                method="POST"
+                style="display: inline"
+              >
+                {% csrf_token %}
+                <button
+                  type="submit"
+                  class="btn btn-danger"
+                  onclick="return confirm('Are you sure you want to delete this appointment? This action cannot be undone.');"
+                >
+                  <i class="bi bi-trash3"></i> Delete
+                </button>
+              </form>
+            </td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="2" class="text-center">No appointments scheduled.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

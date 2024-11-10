@@ -1,0 +1,82 @@
+{% extends 'base.html' %} {% block title %}Patient List{% endblock %}
+<!--  -->
+{% block body %}
+<!-- For Patient List  -->
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header text-center bg-primary text-white">
+          <h4>Medical Payment</h4>
+        </div>
+        <div class="card-body">
+          <form method="POST" action="">
+            {% csrf_token %}
+
+            <!-- Voucher Selection -->
+            <div class="form-group">
+              <label for="voucherId">Voucher ID</label>
+              <select
+                class="form-control"
+                id="voucherId"
+                name="voucher_id"
+                required
+              >
+                <option value="" disabled selected>Select Voucher</option>
+                {% for voucher in vouchers %}
+                <option value="{{ voucher.id }}">{{ voucher.name }}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <!-- Payment Date -->
+            <div class="form-group">
+              <label for="paymentDate">Payment Date</label>
+              <input
+                type="date"
+                class="form-control"
+                id="paymentDate"
+                name="payment_date"
+                required
+              />
+            </div>
+
+            <!-- Amount -->
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input
+                type="number"
+                step="0.01"
+                class="form-control"
+                id="amount"
+                name="amount"
+                placeholder="Enter Amount"
+                required
+              />
+            </div>
+
+            <!-- Payment Status -->
+            <div class="form-group form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="isPaid"
+                name="is_paid"
+              />
+              <label class="form-check-label" for="isPaid"
+                >Payment Completed</label
+              >
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary w-100">
+              Submit Payment
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  -->
+{% endblock %}
